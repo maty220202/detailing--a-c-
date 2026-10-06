@@ -1,0 +1,700 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Detailing Adrian-Chris | Premium Car Detailing</title>
+
+  <meta
+    name="description"
+    content="Detailing Adrian-Chris — professional mobile car detailing by Adrian."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav li a {
+      color: #ddd;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav li a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 7% 70px;
+      background:
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.9)),
+        radial-gradient(circle at center, #242424 0%, #080808 65%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero small {
+      color: #d4af37;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 95px);
+      line-height: .95;
+      margin: 20px 0;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      font-size: 19px;
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: .3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: #080808;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #f0cf55;
+    }
+
+    .btn-outline {
+      border: 1px solid #555;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #d4af37;
+      color: #d4af37;
+    }
+
+    section {
+      padding: 100px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title small {
+      color: #d4af37;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .section-title h2 {
+      font-size: 45px;
+      margin-top: 10px;
+    }
+
+    .section-title p {
+      color: #aaa;
+      max-width: 600px;
+      margin: 10px auto;
+    }
+
+    .services {
+      background: #0e0e0e;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: #151515;
+      border: 1px solid #262626;
+      padding: 35px;
+      border-radius: 12px;
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #d4af37;
+    }
+
+    .service-icon {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      color: #d4af37;
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about-image {
+      min-height: 430px;
+      border-radius: 15px;
+      background:
+        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.65)),
+        radial-gradient(circle at center, #333, #101010);
+      border: 1px solid #292929;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+
+    .about-text small {
+      color: #d4af37;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .about-text h2 {
+      font-size: 48px;
+      line-height: 1.05;
+      margin: 15px 0 20px;
+    }
+
+    .about-text h2 span {
+      color: #d4af37;
+    }
+
+    .about-text p {
+      color: #aaa;
+      margin-bottom: 18px;
+    }
+
+    .ceo {
+      margin-top: 25px;
+      padding: 20px;
+      border-left: 3px solid #d4af37;
+      background: #111;
+    }
+
+    .ceo strong {
+      display: block;
+      font-size: 20px;
+    }
+
+    .ceo span {
+      color: #d4af37;
+      font-size: 14px;
+    }
+
+    .gallery {
+      background: #0e0e0e;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .gallery-item {
+      min-height: 260px;
+      border-radius: 10px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, #292929, #101010);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 18px;
+      border: 1px solid #242424;
+    }
+
+    .booking {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      background: #111;
+      padding: 35px;
+      border-radius: 12px;
+      border: 1px solid #262626;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      background: #080808;
+      border: 1px solid #333;
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #d4af37;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact {
+      background: #d4af37;
+      color: #080808;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      margin-bottom: 25px;
+    }
+
+    .contact .btn {
+      background: #080808;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 7%;
+      background: #050505;
+      color: #777;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #d4af37;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        padding: 17px 5%;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      section {
+        padding: 75px 5%;
+      }
+
+      .service-grid,
+      .gallery-grid,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        gap: 35px;
+      }
+
+      .about-image {
+        min-height: 300px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .section-title h2,
+      .contact h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      DETAILING <span>ADRIAN-CHRIS</span>
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#booking">Book</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <small>Premium Mobile Detailing</small>
+
+      <h1>
+        YOUR CAR.<br />
+        <span>OUR STANDARD.</span>
+      </h1>
+
+      <p>
+        Professional car detailing with attention to every detail.
+        We bring the shine back to your ride.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="#booking">
+          Book Your Detail
+        </a>
+
+        <a class="btn btn-outline" href="#services">
+          View Services
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="services" id="services">
+
+    <div class="section-title">
+      <small>What We Do</small>
+      <h2>Our Services</h2>
+      <p>
+        Professional detailing designed to make your vehicle look its best.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🧽</div>
+        <h3>Exterior Detail</h3>
+        <p>
+          Hand wash, wheels, tires, exterior cleaning and a clean finish.
+        </p>
+        <div class="price">Starting at $40</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Interior Detail</h3>
+        <p>
+          Vacuuming, surfaces, windows and a deep interior refresh.
+        </p>
+        <div class="price">Starting at $50</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🚘</div>
+        <h3>Full Detail</h3>
+        <p>
+          Complete interior and exterior service for the ultimate refresh.
+        </p>
+        <div class="price">Starting at $90</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="about-image">
+        🚗
+      </div>
+
+      <div class="about-text">
+
+        <small>THE BRAND</small>
+
+        <h2>
+          Built With <span>Passion.</span>
+        </h2>
+
+        <p>
+          Detailing Adrian-Chris was created with one goal:
+          giving every customer a vehicle they can be proud to drive.
+        </p>
+
+        <p>
+          We focus on quality, attention to detail and treating every vehicle
+          like it belongs to us.
+        </p>
+
+        <div class="ceo">
+          <strong>Adrian</strong>
+          <span>CEO & Founder — Detailing Adrian-Chris</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+
+    <div class="section-title">
+      <small>Our Work</small>
+      <h2>Gallery</h2>
+      <p>
+        Add your before-and-after detailing photos here as your business grows.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">YOUR PHOTO</div>
+      <div class="gallery-item">YOUR PHOTO</div>
+      <div class="gallery-item">YOUR PHOTO</div>
+      <div class="gallery-item">YOUR PHOTO</div>
+      <div class="gallery-item">YOUR PHOTO</div>
+      <div class="gallery-item">YOUR PHOTO</div>
+
+    </div>
+
+  </section>
+
+  <section id="booking">
+
+    <div class="section-title">
+      <small>Appointments</small>
+      <h2>Book Your Detail</h2>
+      <p>
+        Fill out the form and we'll get back to you.
+      </p>
+    </div>
+
+    <div class="booking">
+
+      <form onsubmit="sendBooking(event)">
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name"
+          required
+        />
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Phone Number"
+          required
+        />
+
+        <input
+          type="text"
+          id="vehicle"
+          placeholder="Vehicle (Example: 2022 Honda Civic)"
+          required
+        />
+
+        <select id="service" required>
+          <option value="">Select a Service</option>
+          <option>Exterior Detail</option>
+          <option>Interior Detail</option>
+          <option>Full Detail</option>
+        </select>
+
+        <textarea
+          id="message"
+          placeholder="Tell us anything we should know about your vehicle..."
+        ></textarea>
+
+        <button class="btn btn-primary" type="submit">
+          Request Appointment
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <section class="contact">
+
+    <h2>READY TO MAKE YOUR CAR SHINE?</h2>
+
+    <p>
+      Contact Adrian at (786) 827-8029 today.
+    </p>
+
+    <a
+      class="btn"
+      href="tel:+17868278029"
+    >
+      Call Adrian
+    </a>
+
+  </section>
+
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      <strong>Detailing Adrian-Chris</strong>.
+      All Rights Reserved.
+    </p>
+
+    <p>
+      Adrian — CEO & Founder
+    </p>
+
+    <p>
+      (786) 827-8029
+    </p>
+
+  </footer>
+
+  <script>
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    function sendBooking(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value;
+
+      const phone =
+        document.getElementById("phone").value;
+
+      const vehicle =
+        document.getElementById("vehicle").value;
+
+      const service =
+        document.getElementById("service").value;
+
+      const message =
+        document.getElementById("message").value;
+
+      const text =
+        `NEW DETAILING REQUEST\n\n` +
+        `Name: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Vehicle: ${vehicle}\n` +
+        `Service: ${service}\n` +
+        `Message: ${message}`;
+
+      // Adrian's business WhatsApp number
+      const businessNumber = "17868278029";
+
+      window.location.href =
+        `https://wa.me/${businessNumber}?text=${encodeURIComponent(text)}`;
+    }
+
+  </script>
+
+</body>
+</html>
+```
